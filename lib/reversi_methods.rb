@@ -75,7 +75,6 @@ module ReversiMethods
   end
 
   def finished?(board)
-    return true unless board.flatten.include?(BLANK_CELL)
     !placeable?(board, WHITE_STONE) && !placeable?(board, BLACK_STONE)
   end
 
@@ -90,7 +89,7 @@ module ReversiMethods
     end
     false
   end
- 
+
   def count_stone(board, stone_color)
     board.flatten.count { |cell| cell == stone_color }
   end
